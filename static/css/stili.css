@@ -1,0 +1,15 @@
+#nav {
+    color: black;
+    border: 8px;
+    border-color: black;
+    text-decoration: none;
+    background-color: rgba(3, 43, 3, 0.13);
+    }
+    
+    .sastavs {
+        color: grey;
+    }
+
+    li {
+        color:blueviolet;
+    }
