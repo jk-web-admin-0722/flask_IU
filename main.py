@@ -21,5 +21,32 @@ def parametri():
     print("Title:", title)
     return "Param"
 
+@app.route('/saskaitit')
+def saskaitit():
+    sk1 = request.args.get('sk1')
+    sk2 = request.args.get('sk2')
+    # print("sk1", type(sk1))
+    # print("sk2", type(sk2))
+    if sk1 is not None and sk2 is not None:
+        if sk1.isdigit() and sk2.isdigit():
+            sum = int(sk1) + int(sk2)
+            return f"Summa ir {sum}"
+        else:
+            return "Kāds no parametriem nav skaitlis!"
+    else:
+        return "Neatradu parametrus"
+
+@app.route('/meklet')
+def meklet():
+    parametrs = request.args.get('vaicajums')
+    rezultats = []
+    if parametrs is not None:
+        with open("titanic.csv", "r", encoding="utf-8") as f:
+            for rindina in f.readlines():
+                if parametrs in rindina:
+                    rezultats.append(rindina)
+
+    return rezultats
+
 if __name__ == "__main__":
    app.run(debug = True)
