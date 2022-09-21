@@ -48,5 +48,19 @@ def meklet():
 
     return rezultats
 
+    #RECEPTES
+
+@app.route('/receptes')
+def receptes():
+    return render_template('receptes.html')
+
+@app.route('/vafeles')
+def vafeles():
+    return render_template('vafeles.html')
+
+@app.route('/vrapi')
+def vrapi():
+    return render_template('vrapi.html')
+
 if __name__ == "__main__":
    app.run(debug = True)
